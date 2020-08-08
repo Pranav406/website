@@ -16,6 +16,7 @@ License: Creative Commons Attribution 3.0 Unported
 	<!-- //Meta tag Keywords -->
 	<link rel="stylesheet" href="css/bootstrap.css"><!-- Bootstrap-Core-CSS -->
 	<!-- Web-Fonts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<link rel="short icon" href="Instagram/3ccab225-5d65-43ec-96c2-4d13c21cdb1c.jpg">
 	<!-- //Web-Fonts -->
 	
@@ -260,7 +261,7 @@ License: Creative Commons Attribution 3.0 Unported
 		<section class="contact" id="contact">
 			<div class="inner-sec">
 				<h3 class="heading text-capitalize mb-4">Get In Touch <span></span></h3>
-				<form name="contact-form" class="contact-form" action="mail3.php"  method="post"  id="form">
+				<form name="contact-form" class="contact-form"   method="post"  id="form">
 					<div class="row">
 						<div class="col-md-6 con-gd">
 							<div class="form-group">
@@ -320,6 +321,25 @@ License: Creative Commons Attribution 3.0 Unported
 			window.scrollTo(0, 1);
 		}
 	</script>
+	<script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
 <!-- Custom-Files -->
 	
 	
